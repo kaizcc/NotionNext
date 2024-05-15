@@ -147,7 +147,7 @@ const LayoutBase = props => {
           {fullWidth ? null : (
             <div
               className={
-                'hidden md:block border-r dark:border-transparent relative z-10 dark:bg-hexo-black-gray'
+                'hidden md:block border-r dark:border-transparent relative z-10 dark:bg-slate-900'
               }>
               <div className='w-72 py-14 px-6 sticky top-0 overflow-y-scroll h-screen scroll-hidden'>
                 {slotLeft}
@@ -205,7 +205,7 @@ const LayoutBase = props => {
             <div
               style={{ width: '20rem' }}
               className={
-                'hidden xl:block dark:border-transparent flex-shrink-0 relative z-10 '
+                'hidden xl:block dark:border-transparent flex-shrink-0 relative z-10 dark:bg-slate-900'
               }>
               <div className='py-14 px-6 sticky top-0'>
                 <ArticleInfo post={props?.post ? props?.post : props.notice} />
