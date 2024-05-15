@@ -166,7 +166,7 @@ const LayoutBase = props => {
 
           <div
             id='center-wrapper'
-            className='flex flex-col justify-between w-full relative z-10 pt-14 min-h-screen dark:bg-black'>
+            className='flex flex-col justify-between w-full relative z-10 pt-14 min-h-screen dark:bg-slate-800'>
             <div
               id='container-inner'
               className={`w-full px-7 ${fullWidth ? 'px-10' : 'max-w-3xl'} justify-center mx-auto`}>
