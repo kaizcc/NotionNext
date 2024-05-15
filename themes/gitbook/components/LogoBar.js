@@ -28,7 +28,7 @@ export default function LogoBar(props) {
         href={`/${siteConfig('GITBOOK_INDEX_PAGE', '', CONFIG)}`}
         className='flex text-md md:text-xl dark:text-gray-200'>
         <LazyImage
-          src={siteInfo?.icon}
+          src={siteConfig('BLOG_FAVICON') || siteInfo?.icon}
           width={24}
           height={24}
           alt={siteConfig('AUTHOR')}
