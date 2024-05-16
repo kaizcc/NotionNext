@@ -53,7 +53,7 @@ export default function ArticleDetail(props) {
                     {post.category}
 
                   </Link>
-                <span className='mr-2 dark:text-white'>|</span>
+                <span className='mr-2'>|</span>
               </>)}
 
               {post?.type !== 'Page' && (<>
