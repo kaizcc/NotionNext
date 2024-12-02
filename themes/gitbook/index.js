@@ -150,7 +150,7 @@ const LayoutBase = props => {
           {/* 左侧推拉抽屉 */}
           {fullWidth ? null : (
             <div className={'hidden md:block relative z-10 '}>
-              <div className='w-80 pt-14 pb-4 sticky top-0 h-screen flex justify-between flex-col'>
+              <div className='w-80 pt-14 pb-4 sticky top-0 h-screen flex justify-between flex-col bg-black'>
                 {/* 导航 */}
                 <div className='overflow-y-scroll scroll-hidden pt-10 pl-5'>
                   {/* 嵌入 */}
@@ -192,7 +192,7 @@ const LayoutBase = props => {
           {fullWidth ? null : (
             <div
               className={
-                'w-72 hidden 2xl:block dark:border-transparent flex-shrink-0 relative z-10 '
+                'w-72 hidden 2xl:block dark:border-transparent flex-shrink-0 relative z-10 dark:bg-slate-800 '
               }>
               <div className='py-14 sticky top-0'>
                 <ArticleInfo post={props?.post ? props?.post : props.notice} />
