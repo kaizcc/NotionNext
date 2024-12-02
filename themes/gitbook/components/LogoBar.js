@@ -22,7 +22,7 @@ export default function LogoBar(props) {
           alt={siteConfig('AUTHOR')}
           className='mr-2 hidden md:block '
         />
-        {siteInfo?.title || siteConfig('TITLE')}
+        {siteConfig('TITLE') || siteInfo?.title}
       </Link>
     </div>
   )
