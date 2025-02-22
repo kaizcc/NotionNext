@@ -94,19 +94,34 @@ const nextConfig = {
         // 支持的所有多语言,按需填写即可
         locales
       },
+  // images: {
+  //   // 图片压缩
+  //   formats: ['image/avif', 'image/webp'],
+  //   // 允许next/image加载的图片 域名
+  //   domains: [
+  //     'gravatar.com',
+  //     'www.notion.so',
+  //     'avatars.githubusercontent.com',
+  //     'images.unsplash.com',
+  //     'source.unsplash.com',
+  //     'p1.qhimg.com',
+  //     'webmention.io',
+  //     'ko-fi.com'
+  //   ]
+  // },
   images: {
     // 图片压缩
     formats: ['image/avif', 'image/webp'],
-    // 允许next/image加载的图片 域名
-    domains: [
-      'gravatar.com',
-      'www.notion.so',
-      'avatars.githubusercontent.com',
-      'images.unsplash.com',
-      'source.unsplash.com',
-      'p1.qhimg.com',
-      'webmention.io',
-      'ko-fi.com'
+    // 使用 remotePatterns 允许所有域名
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: '**',
+      }
     ]
   },
 
