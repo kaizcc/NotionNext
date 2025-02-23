@@ -65,7 +65,10 @@ const LayoutBase = props => {
         {/* 主区 */}
         <main
           id='out-wrapper'
-          className={`relative m-auto flex-grow w-full transition-all ${!fullWidth ? 'max-w-2xl px-4' : 'px-4 md:px-24'}`}>
+          className={`relative m-auto flex-grow w-full transition-all ${
+            !fullWidth 
+              ? 'max-w-2xl md:max-w-4xl px-4' 
+              : 'px-4 md:px-24'}`}>
           <Transition
             show={!onLoading}
             appear={true}
