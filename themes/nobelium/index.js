@@ -134,7 +134,13 @@ const LayoutPostList = props => {
   } else {
     filteredBlogPosts = deepClone(posts)
   }
-
+  // 添加排序逻辑
+  filteredBlogPosts = filteredBlogPosts.sort((a, b) => {
+    const dateA = new Date(a.date?.start_date || a.createdTime);
+    const dateB = new Date(b.date?.start_date || b.createdTime);
+    return dateB - dateA; // 降序排序，最新的文章在前面
+  });
+  
   return (
     <>
       {topSlot}
