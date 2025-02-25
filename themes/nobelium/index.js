@@ -134,13 +134,31 @@ const LayoutPostList = props => {
   } else {
     filteredBlogPosts = deepClone(posts)
   }
-  // 添加排序逻辑
-  filteredBlogPosts = filteredBlogPosts.sort((a, b) => {
-    const dateA = new Date(a.date?.start_date || a.createdTime);
-    const dateB = new Date(b.date?.start_date || b.createdTime);
-    return dateB - dateA; // 降序排序，最新的文章在前面
-  });
-  
+
+  // 添加排序逻辑 - 加入更多的防护措施
+  if (filteredBlogPosts && filteredBlogPosts.length > 0) {
+    filteredBlogPosts = filteredBlogPosts.sort((a, b) => {
+      // 确保a和b存在
+      if (!a || !b) return 0;
+      
+      const getDate = (post) => {
+        // 尝试从多个可能的日期字段获取日期
+        if (post.date?.start_date) return new Date(post.date.start_date);
+        if (post.createdTime) return new Date(post.createdTime);
+        if (post.created_time) return new Date(post.created_time);
+        // 如果都没有，返回一个默认日期
+        return new Date(0);
+      };
+      
+      const dateA = getDate(a);
+      const dateB = getDate(b);
+      
+      // 使用时间戳比较而不是直接比较Date对象
+      return dateB.getTime() - dateA.getTime();
+    });
+  }
+
+
   return (
     <>
       {topSlot}
